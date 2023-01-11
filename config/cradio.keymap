@@ -14,8 +14,8 @@
 
 #define MAC 0
 #define WIN 1
-#define RIGHT 2
-#define LEFT 3
+#define RIG 2
+#define LEF 3
 #define TRI 4
 
 / {
@@ -35,7 +35,7 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <RIGHT LEFT>;
+            if-layers = <RIG LEF>;
             then-layer = <TRI>;
         };
     };
@@ -54,7 +54,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ' "      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SQT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                          &lt LEFT ENTER  &kp LGUI    &kp SPACE  &lt RIGHT TAB
+                                           &lt LEF ENTER  &kp LGUI    &kp SPACE  &lt RIG TAB
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -71,7 +71,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ' "      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp SQT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                          &lt LEFT ENTER  &kp LCTRL    &kp SPACE  &lt RIGHT TAB
+                                          &lt LEF ENTER  &kp LCTRL    &kp SPACE  &lt RIG TAB
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
