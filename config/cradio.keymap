@@ -83,7 +83,7 @@
             &kp N1    &kp N2     &kp N3     &kp N4     &kp N5          &kp N6     &kp N7     &kp N8     &kp N9      &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ DELETE   │ CapsLock │Paus/Break│ PrintSc  │  INSERT  │   |          │ LEFT     │ DOWN     │ UP       │ RIGHT    │
-            &kp DEL   &CAPS    &kp PAUSE_BREAK  &kp PSCRN  &kp INS     &trans    &kp LARW   &kp DARW   &kp UARW   &kp RARW 
+           &kp DEL   &kp CAPS  &kp PAUSE_BREAK  &kp PSCRN  &kp INS     &trans    &kp LARW   &kp DARW   &kp UARW   &kp RARW 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │ HOME     │ PAGE DN  │ PAGE UP  │ END      │
             &trans    &trans     &trans     &trans      &trans           &trans     &kp HOME   &kp PG_DN  &kp PG_UP  &kp END 
