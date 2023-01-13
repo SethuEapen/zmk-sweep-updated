@@ -103,7 +103,7 @@
             &kp DQT  &kp LBKT   &kp LBRC   &kp LPAR   &trans         &kp FSLH   &kp MINUS  &kp EQUAL  &kp COLON   &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  '       │  ]       │  }       │  )       │          │   │    \     │  _       │  +       │  │       │   ?      │
-            &kp SQT     &kp LBKT   &kp RBRC   &kp RPAR   &trans         &kp BSLH   &kp UNDER  &kp PLUS   &kp PIPE  &kp QMARK
+            &kp SQT     &kp RBKT   &kp RBRC   &kp RPAR   &trans         &kp BSLH   &kp UNDER  &kp PLUS   &kp PIPE  &kp QMARK
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
