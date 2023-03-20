@@ -14,9 +14,11 @@
 
 #define MAC 0
 #define WIN 1
-#define RIG 2
-#define LEF 3
-#define TRI 4
+#define GAME 2
+#define RESOLVE 3
+#define RIG 4
+#define LEF 5
+#define TRI 6
 
 / {
     behaviors {
@@ -76,6 +78,40 @@
             >;
         };
 
+        game_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  ESCAPE  │  Q       │  W       │  E       │  R       │   │  Y       │  U       │  I       │  O       │  P       │
+            &kp ESC      &kp Q      &kp W      &kp E      &kp R           &kp T     &kp Y     &kp U      &kp I      &kp O
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│   SHIFT  │  A       │  S       │  D       │  F       │   │  H       │  J       │  K       │  L       │BACKSPACE │
+            &kp LSHIFT &kp A      &kp S      &kp D      &kp F          &kp G      &kp H      &kp J      &kp K      &kp L 
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  CONTROL │  Z       │  X       │  C       │  V       │   │  N       │  M       │ , <      │ . >      │ ENTER    │
+            &kp LCTRL  &kp Z      &kp X      &kp C      &kp V          &kp B      &kp N      &kp M      &kp COMMA  &kp DOT 
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                            &kp LSHIFT  &kp SPACE     &trans      &tog GAME
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        resolve_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
+            &kp LBKT   &kp J      &kp K      &kp L      &kp RBKT         &kp T     &kp Y      &kp U      &kp I      &kp O
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│BACKSPACE │  DELETE  │  A       │  B       │  T       │   │  H       │  J       │  K       │  L       │BACKSPACE │
+            &kp BSPC   &kp DEL      &kp A      &kp B      &kp T          &kp G      &kp H      &kp J      &kp K      &kp L 
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ ENTER    │
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp ENTER
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                            &kp LCTRL  &kp SPACE     &trans      &tog RESOLVE
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -116,11 +152,11 @@
         //│  F1      │  F2      │  F3      │  F4       │ PROFILE 0  │   │ PROFILE 2  │ TOGGLEOUT  │ WINDOWS  │ VOL MUTE  │ NEXTSONG │
             &kp F1     &kp F2     &kp F3     &kp F4     &bt BT_SEL 0     &bt BT_SEL 2  &out OUT_TOG &tog WIN  &kp C_MUTE  &kp C_NEXT
         //├──────────┼──────────┼──────────┼───────────┼────────────┤   ├────────────┼────────────┼──────────┼───────────┼──────────┤
-        //│  F5      │  F6      │  F7      │  F8       │ PROFILE 1  │   │ PROFILE 3  │ INC BRIGHT │          │  VOL UP   │PAUSEMUSIC│
-            &kp F5     &kp F6     &kp F7     &kp F8     &bt BT_SEL 1     &bt BT_SEL 3  &kp C_BRI_UP  &trans   &kp C_VOL_UP  &kp C_PP
+        //│  F5      │  F6      │  F7      │  F8       │ PROFILE 1  │   │ PROFILE 3  │ INC BRIGHT │   GAME   │  VOL UP   │PAUSEMUSIC│
+            &kp F5     &kp F6     &kp F7     &kp F8     &bt BT_SEL 1     &bt BT_SEL 3  &kp C_BRI_UP &tog GAME &kp C_VOL_UP  &kp C_PP
         //├──────────┼──────────┼──────────┼───────────┼────────────┤   ├────────────┼────────────┼──────────┼───────────┼──────────┤
-        //│  F9      │  F10     │  F11     │  F12      │  CLEAR BT  │   │ PROFILE 4  │ DEC BRIGHT │          |  VOL DOWN │ PREVSONG │
-            &kp F9     &kp F10    &kp F11    &kp F12     &bt BT_CLR      &bt BT_SEL 4  &kp C_BRI_DEC  &trans   &kp C_VOL_DN &kp C_PREV
+        //│  F9      │  F10     │  F11     │  F12      │  CLEAR BT  │   │ PROFILE 4  │ DEC BRIGHT │ RESOLVE  |  VOL DOWN │ PREVSONG │
+            &kp F9     &kp F10    &kp F11    &kp F12     &bt BT_CLR     &bt BT_SEL 4 &kp C_BRI_DEC &tog RESOLVE &kp C_VOL_DN &kp C_PREV
         //╰──────────┴──────────┴──────────┼───────────┼────────────┤   ├────────────┼────────────┼──────────┴───────────┴──────────╯
                                                 &trans     &trans         &trans     &trans
         //                                  ╰───────────┴──────────╯   ╰──────────┴────────────╯
