@@ -70,14 +70,14 @@
         game_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  ESCAPE  │  Q       │  W       │  E       │  R       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp ESC      &kp Q      &kp W      &kp E      &kp R        &kp Y      &kp U      &kp I      &kp O      &kp P
+        //│  ESCAPE  │  Q       │  W       │  E       │  R       │   | T        │  Y       │  U       │  I       │  O       │
+            &kp ESC      &kp Q      &kp W      &kp E      &kp R        &kp T      &kp Y      &kp U      &kp I      &kp O     
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│   SHIFT  │  A       │  S       │  D       │  F       │   │  H       │  J       │  K       │  L       │BACKSPACE │
-            &kp LSHIFT &kp A      &kp S      &kp D      &kp F          &kp H      &kp J       &kp K      &kp L    &kp BSPC
+        //│   SHIFT  │  A       │  S       │  D       │  F       │   │  G       │  H       │  J       │  K       │  L       │
+            &kp LSHIFT &kp A      &kp S      &kp D      &kp F          &kp G      &kp H      &kp J      &kp K      &kp L  
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  CONTROL │  Z       │  X       │  C       │  V       │   │  N       │  M       │   T      │   G      │  B       │
-            &kp TAB    &kp Z      &kp X      &kp C      &kp V          &kp N      &kp M      &kp T      &kp G      &kp B
+        //│  CONTROL │  Z       │  X       │  C       │  V       │   │  B       │  N       │  M       │ , <      │ . >      │
+            &kp TAB    &kp Z      &kp X      &kp C      &kp V          &kp B      &kp N      &kp M      &kp COMMA  &kp DOT   
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &kp LCTRL  &kp SPACE      &kp ENTER  &tog GAME
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -87,16 +87,16 @@
         hame_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  ESCAPE  │  Q       │  S       │  E       │  R       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp ESC      &kp Q      &kp S      &kp E      &kp R        &kp Y      &kp U      &kp I      &kp O      &kp P
+        //│  ESCAPE  │  Q       │  W       │  E       │  R       │   | T        │  Y       │  U       │  I       │  O       │
+            &kp ESC      &kp Q      &kp W      &kp E      &kp R        &kp T      &kp Y      &kp U      &kp I      &kp O     
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│   SHIFT  │  A       │  W       │  D       │  F       │   │  H       │  J       │  K       │  L       │BACKSPACE │
-            &kp LSHIFT &kp A      &kp W      &kp D      &kp F          &kp H      &kp J       &kp K      &kp L    &kp BSPC
+        //│   SHIFT  │  A       │  S       │  D       │  F       │   │  G       │  H       │  J       │  K       │  L       │
+            &kp LSHIFT &kp A      &kp S      &kp D      &kp F          &kp G      &kp H      &kp J      &kp K      &kp L  
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  CONTROL │  Z       │  X       │  C       │  V       │   │  N       │  M       │   T      │   G      │  B       │
-            &kp TAB    &kp Z      &kp X      &kp C      &kp V          &kp N      &kp M      &kp T      &kp G      &kp B
+        //│  CONTROL │  Z       │  X       │  C       │  V       │   │  B       │  N       │  M       │ , <      │ . >      │
+            &kp TAB    &kp Z      &kp X      &kp C      &kp V          &kp B      &kp N      &kp M      &kp COMMA  &kp DOT   
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &kp LCTRL  &kp SPACE      &kp ENTER  &tog GAME
+                                            &kp LCTRL  &kp SPACE      &kp ENTER  &tog HAME
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -141,7 +141,7 @@
         //│  F1      │  F2      │  F3      │  F4       │ PROFILE 0  │   │ PROFILE 2  │ TOGGLEOUT  │   GAME   │ VOL MUTE  │ NEXTSONG │
             &kp F1     &kp F2     &kp F3     &kp F4     &bt BT_SEL 0     &bt BT_SEL 2  &out OUT_TOG &tog GAME  &kp C_MUTE  &kp C_NEXT
         //├──────────┼──────────┼──────────┼───────────┼────────────┤   ├────────────┼────────────┼──────────┼───────────┼──────────┤
-        //│  F5      │  F6      │  F7      │  F8       │ PROFILE 1  │   │ PROFILE 3  │ INC BRIGHT │   GAME   │  VOL UP   │PAUSEMUSIC│
+        //│  F5      │  F6      │  F7      │  F8       │ PROFILE 1  │   │ PROFILE 3  │ INC BRIGHT │   HAME   │  VOL UP   │PAUSEMUSIC│
             &kp F5     &kp F6     &kp F7     &kp F8     &bt BT_SEL 1     &bt BT_SEL 3  &kp C_BRI_UP &tog HAME &kp C_VOL_UP  &kp C_PP
         //├──────────┼──────────┼──────────┼───────────┼────────────┤   ├────────────┼────────────┼──────────┼───────────┼──────────┤
         //│  F9      │  F10     │  F11     │  F12      │  CLEAR BT  │   │ PROFILE 4  │ DEC BRIGHT │          |  VOL DOWN │ PREVSONG │
